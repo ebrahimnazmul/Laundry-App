@@ -29,7 +29,7 @@
 
             >
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/signUpName"
+                android:id="@+id/signupName"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:textColor="@color/black"
@@ -48,7 +48,7 @@
             android:layout_marginTop="5dp"
             >
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/signUpEmail"
+                android:id="@+id/signupEmail"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:textColor="@color/black"
@@ -67,7 +67,7 @@
             android:layout_marginTop="5dp"
             >
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/signUpPassword"
+                android:id="@+id/signupPassword"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:textColor="@color/black"
@@ -79,12 +79,15 @@
 
 
         <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/signUpButton"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
 
             android:text="Signup"
             android:textAllCaps="false"
-            android:background="#00DCF4"
+            android:background="@drawable/button_bg"
+            android:textSize="25sp"
+            android:textColor="#ffffff"
             android:layout_marginTop="30dp"
 
             />

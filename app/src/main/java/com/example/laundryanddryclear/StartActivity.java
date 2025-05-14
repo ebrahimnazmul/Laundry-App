@@ -17,7 +17,6 @@ public class StartActivity extends AppCompatActivity {
 
     TextView signUpButton;
     AppCompatButton goLoginPageButton;
-
     LottieAnimationView startAmination;
 
     @Override
@@ -32,8 +31,8 @@ public class StartActivity extends AppCompatActivity {
         });
 
 
-
         startAmination=findViewById(R.id.startAmimation);
+
 
 
         //*********************************************************
@@ -47,4 +46,5 @@ public class StartActivity extends AppCompatActivity {
 
 
     }
+
 }

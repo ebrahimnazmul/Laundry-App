@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".SignupActivity"
-    android:background="#2855DB"
+    android:background="@drawable/two_color_bg"
 
     >
 
