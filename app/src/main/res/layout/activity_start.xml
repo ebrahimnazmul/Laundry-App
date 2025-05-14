@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".StartActivity"
+    android:background="#2855DB"
+    >
+    <TextView
+        android:id="@+id/titleText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Laundry And Dry Clean"
+        android:textSize="30sp"
+        android:textColor="#ffffff"
+        android:textStyle="bold"
+       android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        />
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/animationView"
+        android:layout_width="match_parent"
+        android:layout_height="350dp"
+        app:lottie_rawRes="@raw/laundry_lottie"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        android:layout_below="@id/titleText"
+        android:layout_centerHorizontal="true"
+        />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:layout_below="@id/animationView"
+        app:cardCornerRadius="20dp"
+        android:elevation="20dp"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Get your laundry And dry clean within 24 hours"
+               android:textSize="25sp"
+                android:gravity="center_horizontal"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="A convenient laundry solution thats help protech the environment"
+               android:textSize="18sp"
+                android:textColor="#000000"
+                android:gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                />
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/startAmimation"
+                android:layout_width="400dp"
+                android:layout_height="200dp"
+                app:lottie_rawRes="@raw/start_lottie"
+                app:lottie_autoPlay="true"
+                app:lottie_loop="true"
+                android:layout_above="@id/edCard"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center_horizontal"
+                />
+
+
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>
