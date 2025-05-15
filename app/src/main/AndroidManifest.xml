@@ -13,6 +13,9 @@
         android:theme="@style/Theme.LaundryAndDryClear"
         tools:targetApi="31">
         <activity
+            android:name=".OrderConfirmActivity"
+            android:exported="false" />
+        <activity
             android:name=".LoginActivity"
             android:exported="false" />
         <activity

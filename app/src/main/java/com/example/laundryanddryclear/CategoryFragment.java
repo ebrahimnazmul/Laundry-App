@@ -1,5 +1,6 @@
 package com.example.laundryanddryclear;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -40,44 +41,33 @@ public class CategoryFragment extends Fragment {
         gridView.setAdapter(adapter);
 
         serviceMap=new HashMap<>();
+        serviceMap.put("itemType","washing");
         serviceMap.put("title","Washing / Cleaning ");
         serviceMap.put("image","https://media.istockphoto.com/id/1134696879/photo/laundry-room-with-a-washing-machine.jpg?s=612x612&w=0&k=20&c=uYPFAjM1JaIm3-PW6F-4hjttjEDVSKAiDte1O1VzL6M=");
         servieList.add(serviceMap);
 
         serviceMap=new HashMap<>();
+        serviceMap.put("itemType","drying");
         serviceMap.put("title","Drying");
         serviceMap.put("image", "https://media.istockphoto.com/id/1307208156/photo/clean-laundry-hanging-on-drying-rack-indoors.jpg?s=612x612&w=0&k=20&c=nRM5WB3bZxTzNxkLFehavTZzjUPxmPSWf4oOINt9doA=");
         servieList.add(serviceMap);
 
         serviceMap=new HashMap<>();
+        serviceMap.put("itemType","ironing");
         serviceMap.put("title","Ironing / Pressing ");
         serviceMap.put("image","https://media.istockphoto.com/id/641713422/photo/ironing-clothes-on-ironing-board.jpg?s=612x612&w=0&k=20&c=LFM1wIUHqYornAL1q4lfpptqy1QPqoOSE0xtXAwb5DA=");
         servieList.add(serviceMap);
 
         serviceMap=new HashMap<>();
+        serviceMap.put("itemType","cleaning");
         serviceMap.put("title","Dry Cleaning");
         serviceMap.put("image","https://cdn.pixabay.com/photo/2014/02/17/13/34/cleaning-268126_640.jpg");
         servieList.add(serviceMap);
 
 
-        serviceMap=new HashMap<>();
-        serviceMap.put("title","    Clothing Alteration / Repair");
-        serviceMap.put("image","https://www.realsimple.com/thmb/NtcdnrtZjaNabQdKKc5Ah5VW-ng=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/tailoring-supplies-dc4f24993a6d4c6bbb647caf78f58a11.jpg");
-        servieList.add(serviceMap);
-
-        serviceMap=new HashMap<>();
-        serviceMap.put("title","    Clothing Alteration / Repair");
-        serviceMap.put("image","https://www.realsimple.com/thmb/NtcdnrtZjaNabQdKKc5Ah5VW-ng=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/tailoring-supplies-dc4f24993a6d4c6bbb647caf78f58a11.jpg");
-        servieList.add(serviceMap);
-
-
-        serviceMap=new HashMap<>();
-        serviceMap.put("title","    Clothing Alteration / Repair");
-        serviceMap.put("image","https://www.realsimple.com/thmb/NtcdnrtZjaNabQdKKc5Ah5VW-ng=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/tailoring-supplies-dc4f24993a6d4c6bbb647caf78f58a11.jpg");
-        servieList.add(serviceMap);
-
-
         return view;
+
+
     }
     public class Adapter extends BaseAdapter{
 
@@ -108,12 +98,41 @@ public class CategoryFragment extends Fragment {
 
             String image=hashMap.get("image");
             String title=hashMap.get("title");
+            String itemType=hashMap.get("itemType");
 
             textView.setText(""+title);
 
             Picasso.get()
                     .load(image)
                     .into(imageView);
+
+            textView.setOnClickListener(v -> {
+
+                if (itemType.contains("washing")){
+
+                   OrderConfirmActivity.itemType=itemType;
+                    Intent intent = new Intent(getContext(), OrderConfirmActivity.class);
+                    startActivity(intent);
+                } else if (itemType.contains("drying")) {
+                    OrderConfirmActivity.itemType=itemType;
+                    Intent intent = new Intent(getContext(), OrderConfirmActivity.class);
+                    startActivity(intent);
+
+                } else if (itemType.contains("ironing")) {
+
+                    OrderConfirmActivity.itemType=itemType;
+                    Intent intent = new Intent(getContext(), OrderConfirmActivity.class);
+                    startActivity(intent);
+
+                } else if (itemType.contains("cleaning")) {
+
+                    OrderConfirmActivity.itemType=itemType;
+                    Intent intent = new Intent(getContext(), OrderConfirmActivity.class);
+                    startActivity(intent);
+
+                }
+
+            });
 
             return view;
         }
