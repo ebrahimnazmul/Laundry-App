@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CategoryFragment"
+    >
+
+
+    <ImageView
+        android:id="@+id/backButton"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@drawable/back"
+        android:layout_margin="10dp"
+        />
+    <TextView
+        android:id="@+id/wellcomeText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="WellCome Back"
+        android:layout_toRightOf="@id/backButton"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="20dp"
+        android:textSize="20sp"
+        android:textColor="#000000"
+        />
+
+    <TextView
+        android:id="@+id/nameText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="MD EBRAHIM"
+        android:layout_below="@id/wellcomeText"
+        android:layout_toRightOf="@id/backButton"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:textSize="20sp"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        />
+
+    <HorizontalScrollView
+        android:id="@+id/hscroolView"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:layout_below="@id/nameText"
+        android:layout_margin="5dp"
+        android:scrollbars="none"
+        android:background="@drawable/curv_bg"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            >
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="250dp"
+                android:layout_height="match_parent"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/curv_bg"
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+
+                        android:src="@drawable/bg1"
+                        android:scaleType="center"
+
+                        />
+                </LinearLayout>
+
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="250dp"
+                android:layout_height="match_parent"
+                android:layout_marginRight="10dp"
+                >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+
+                        android:src="@drawable/bg1"
+                        android:scaleType="center"
+
+                        />
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+
+    </HorizontalScrollView>
+
+
+
+    <TextView
+        android:id="@+id/serviceText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:text="Our Services"
+        android:layout_below="@id/hscroolView"
+        android:textSize="16sp"
+        android:layout_margin="5dp"
+        android:textColor="#000000"
+        />
+
+
+    <GridView
+        android:id="@+id/grigView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/serviceText"
+        android:layout_marginTop="5dp"
+        android:numColumns="2"
+        android:layout_margin="5dp"
+        android:scrollbars="none"
+        />
+
+
+
+</RelativeLayout>

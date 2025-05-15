@@ -50,7 +50,7 @@ public class SignupActivity extends AppCompatActivity {
         //adapter for spinner .eta kaj korbe login or signup page select korar jonno
 
         String [] sItem={"Login","Signup"};
-        ArrayAdapter<String> adapter=new ArrayAdapter<>(this, androidx.appcompat.R.layout.support_simple_spinner_dropdown_item,sItem);
+        ArrayAdapter<String> adapter=new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item,sItem);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         dropDownMenu.setAdapter(adapter);
 

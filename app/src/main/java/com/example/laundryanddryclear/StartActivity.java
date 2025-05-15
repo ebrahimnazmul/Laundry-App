@@ -2,6 +2,7 @@ package com.example.laundryanddryclear;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
@@ -15,7 +16,7 @@ import com.airbnb.lottie.LottieAnimationView;
 
 public class StartActivity extends AppCompatActivity {
 
-    TextView signUpButton;
+    TextView signUpButton,titileText;
     AppCompatButton goLoginPageButton;
     LottieAnimationView startAmination;
 
@@ -32,6 +33,7 @@ public class StartActivity extends AppCompatActivity {
 
 
         startAmination=findViewById(R.id.startAmimation);
+        titileText=findViewById(R.id.titleText);
 
 
 
@@ -42,6 +44,14 @@ public class StartActivity extends AppCompatActivity {
 
         });
         //*********************************************************
+
+        titileText.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(StartActivity.this, MainActivity.class);
+                startActivity(intent);
+            }
+        });
 
 
 
