@@ -37,33 +37,35 @@ public class CategoryFragment extends Fragment {
      View view= inflater.inflate(R.layout.fragment_category, container, false);
        gridView =view.findViewById(R.id.grigView);
 
-        Adapter adapter=new Adapter();
-        gridView.setAdapter(adapter);
+
 
         serviceMap=new HashMap<>();
         serviceMap.put("itemType","washing");
         serviceMap.put("title","Washing / Cleaning ");
-        serviceMap.put("image","https://media.istockphoto.com/id/1134696879/photo/laundry-room-with-a-washing-machine.jpg?s=612x612&w=0&k=20&c=uYPFAjM1JaIm3-PW6F-4hjttjEDVSKAiDte1O1VzL6M=");
+        serviceMap.put("image","http://192.168.0.101/imageForLaundryApp/washing.jpg");
         servieList.add(serviceMap);
 
         serviceMap=new HashMap<>();
         serviceMap.put("itemType","drying");
         serviceMap.put("title","Drying");
-        serviceMap.put("image", "https://media.istockphoto.com/id/1307208156/photo/clean-laundry-hanging-on-drying-rack-indoors.jpg?s=612x612&w=0&k=20&c=nRM5WB3bZxTzNxkLFehavTZzjUPxmPSWf4oOINt9doA=");
+        serviceMap.put("image", "http://192.168.0.101/imageForLaundryApp/drying.jpg");
         servieList.add(serviceMap);
 
         serviceMap=new HashMap<>();
         serviceMap.put("itemType","ironing");
         serviceMap.put("title","Ironing / Pressing ");
-        serviceMap.put("image","https://media.istockphoto.com/id/641713422/photo/ironing-clothes-on-ironing-board.jpg?s=612x612&w=0&k=20&c=LFM1wIUHqYornAL1q4lfpptqy1QPqoOSE0xtXAwb5DA=");
+        serviceMap.put("image","http://192.168.0.101/imageForLaundryApp/ironing.jpg");
         servieList.add(serviceMap);
 
         serviceMap=new HashMap<>();
         serviceMap.put("itemType","cleaning");
         serviceMap.put("title","Dry Cleaning");
-        serviceMap.put("image","https://cdn.pixabay.com/photo/2014/02/17/13/34/cleaning-268126_640.jpg");
+        serviceMap.put("image","http://192.168.0.101/imageForLaundryApp/cleaning.jpg");
         servieList.add(serviceMap);
 
+
+        Adapter adapter=new Adapter();
+        gridView.setAdapter(adapter);
 
         return view;
 
@@ -106,33 +108,31 @@ public class CategoryFragment extends Fragment {
                     .load(image)
                     .into(imageView);
 
-            textView.setOnClickListener(v -> {
 
+
+
+            imageView.setOnClickListener(v -> {
                 if (itemType.contains("washing")){
 
-                   OrderConfirmActivity.itemType=itemType;
-                    Intent intent = new Intent(getContext(), OrderConfirmActivity.class);
+                   WashingOrderActivity.itemType=itemType;
+                    Intent intent = new Intent(getContext(),WashingOrderActivity.class);
                     startActivity(intent);
+
                 } else if (itemType.contains("drying")) {
-                    OrderConfirmActivity.itemType=itemType;
-                    Intent intent = new Intent(getContext(), OrderConfirmActivity.class);
+                    DryingOrderActivity.itemType = itemType;
+                    Intent intent = new Intent(getContext(), DryingOrderActivity.class);
                     startActivity(intent);
+                }else if (itemType.contains("ironing")) {
 
-                } else if (itemType.contains("ironing")) {
 
-                    OrderConfirmActivity.itemType=itemType;
-                    Intent intent = new Intent(getContext(), OrderConfirmActivity.class);
+                    IroningOrderActivity.itemType=itemType;
+                    Intent intent = new Intent(getContext(),IroningOrderActivity.class);
                     startActivity(intent);
-
-                } else if (itemType.contains("cleaning")) {
-
-                    OrderConfirmActivity.itemType=itemType;
-                    Intent intent = new Intent(getContext(), OrderConfirmActivity.class);
-                    startActivity(intent);
-
                 }
 
+
             });
+
 
             return view;
         }

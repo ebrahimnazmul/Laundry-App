@@ -8,21 +8,24 @@
         app:showAsAction="always"
 
         />
+
     <item android:id="@+id/message"
         android:title="Message"
-        android:icon="@drawable/home"
+        android:icon="@drawable/messenger"
         app:showAsAction="always"
 
         />
+
     <item android:id="@+id/notification"
         android:title="Notification"
-        android:icon="@drawable/home"
+        android:icon="@drawable/bell"
         app:showAsAction="always"
 
         />
+
     <item android:id="@+id/profile"
         android:title="Profile"
-        android:icon="@drawable/home"
+        android:icon="@drawable/user"
         app:showAsAction="always"
 
         />
