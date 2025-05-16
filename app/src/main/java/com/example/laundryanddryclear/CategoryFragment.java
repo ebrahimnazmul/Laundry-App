@@ -56,13 +56,7 @@ public class CategoryFragment extends Fragment {
         serviceMap.put("title","Ironing / Pressing ");
         serviceMap.put("image","http://192.168.0.101/imageForLaundryApp/ironing.jpg");
         servieList.add(serviceMap);
-
-        serviceMap=new HashMap<>();
-        serviceMap.put("itemType","cleaning");
-        serviceMap.put("title","Dry Cleaning");
-        serviceMap.put("image","http://192.168.0.101/imageForLaundryApp/cleaning.jpg");
-        servieList.add(serviceMap);
-
+        
 
         Adapter adapter=new Adapter();
         gridView.setAdapter(adapter);
@@ -123,7 +117,6 @@ public class CategoryFragment extends Fragment {
                     Intent intent = new Intent(getContext(), DryingOrderActivity.class);
                     startActivity(intent);
                 }else if (itemType.contains("ironing")) {
-
 
                     IroningOrderActivity.itemType=itemType;
                     Intent intent = new Intent(getContext(),IroningOrderActivity.class);

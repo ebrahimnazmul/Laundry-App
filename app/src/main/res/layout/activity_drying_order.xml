@@ -63,6 +63,7 @@
                     android:orientation="vertical"
                     >
                     <TextView
+                        android:id="@+id/tShirt"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="T_SHIRT"
@@ -140,6 +141,7 @@
                     android:orientation="vertical"
                     >
                     <TextView
+                        android:id="@+id/dress"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Dress"
@@ -223,6 +225,7 @@
                     android:orientation="vertical"
                     >
                     <TextView
+                        android:id="@+id/outerWear"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Outer Wear"

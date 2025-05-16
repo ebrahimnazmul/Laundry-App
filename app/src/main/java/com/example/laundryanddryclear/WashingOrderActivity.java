@@ -24,6 +24,8 @@ public class WashingOrderActivity extends AppCompatActivity {
 
     TextView tShirt,dress,outerWear;
     int tCount=0;
+    int dCount=0;
+    int wCount=0;
 
     public static String itemType="";
     TextView titleText;
@@ -66,17 +68,70 @@ public class WashingOrderActivity extends AppCompatActivity {
         dress=findViewById(R.id.dress);
         outerWear=findViewById(R.id.outerWear);
 
+
+
+        //********************************
         tShirtPlus.setOnClickListener(v -> {
             tCount++;
 
             tShirtQuantity.setText(String.valueOf(tCount));
 
+        });
+        tShirtMinus.setOnClickListener(v -> {
+
+            tCount--;
+            tShirtQuantity.setText(String.valueOf(tCount));
+
+            if (tCount<1){
+
+                tCount=0;
+                tShirtQuantity.setText(String.valueOf(tCount));
+            }
+
+        });
+
+        //********************************************
+
+        dressPlus.setOnClickListener(v -> {
+            dCount++;
+
+            dressQuantity.setText(String.valueOf(dCount));
+
+        });
+        dressMinus.setOnClickListener(v -> {
+
+            dCount--;
+            dressQuantity.setText(String.valueOf(dCount));
+
+            if (dCount<1){
+
+                tCount=0;
+               dressQuantity.setText(String.valueOf(dCount));
+            }
+
+        });
+
+        //********************************************
+        outerWearPlus.setOnClickListener(v -> {
+            wCount++;
+
+            outerWearQuantity.setText(String.valueOf(wCount));
+
+        });
+        outerWearMinus.setOnClickListener(v -> {
+
+            wCount--;
+            dressQuantity.setText(String.valueOf(wCount));
+
+            if (wCount<1){
+
+                wCount=0;
+                outerWearQuantity.setText(String.valueOf(wCount));
+            }
 
         });
 
         orderConfirm();
-
-
 
     }
 
