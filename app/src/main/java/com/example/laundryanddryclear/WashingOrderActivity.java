@@ -27,6 +27,11 @@ public class WashingOrderActivity extends AppCompatActivity {
     int dCount=0;
     int wCount=0;
 
+    double tMoney=0,tPrice=0.30;
+    double dMoney=0,dPrice=0.50;
+    double wMoney=0,wPrice=0.80;
+    TextView tMoneyText,dMoneyText,wMoneyText;
+
     public static String itemType="";
     TextView titleText;
     ImageView tShirtPlus,tShirtMinus,outerWearPlus,outerWearMinus,dressPlus,dressMinus;
@@ -69,23 +74,37 @@ public class WashingOrderActivity extends AppCompatActivity {
         outerWear=findViewById(R.id.outerWear);
 
 
+        tMoneyText=findViewById(R.id.tMoneyText);
+        dMoneyText=findViewById(R.id.dMoneyText);
+        wMoneyText=findViewById(R.id.wMoneyText);
+
 
         //********************************
         tShirtPlus.setOnClickListener(v -> {
             tCount++;
 
             tShirtQuantity.setText(String.valueOf(tCount));
+            tMoney=tPrice*tCount;
+            tMoneyText.setText(String.format("%.2f", tMoney));
+
+
+
 
         });
         tShirtMinus.setOnClickListener(v -> {
 
             tCount--;
             tShirtQuantity.setText(String.valueOf(tCount));
+            tMoney=tPrice*tCount;
+            tMoneyText.setText(String.format("%.2f", tMoney));
+
+
 
             if (tCount<1){
 
                 tCount=0;
                 tShirtQuantity.setText(String.valueOf(tCount));
+
             }
 
         });
@@ -96,12 +115,18 @@ public class WashingOrderActivity extends AppCompatActivity {
             dCount++;
 
             dressQuantity.setText(String.valueOf(dCount));
+            dMoney=dPrice*dCount;
+            dMoneyText.setText(String.format("%.2f", dMoney));
+
 
         });
         dressMinus.setOnClickListener(v -> {
 
             dCount--;
             dressQuantity.setText(String.valueOf(dCount));
+            dMoney=dPrice*dCount;
+            dMoneyText.setText(String.format("%.2f", dMoney));
+
 
             if (dCount<1){
 
@@ -116,12 +141,18 @@ public class WashingOrderActivity extends AppCompatActivity {
             wCount++;
 
             outerWearQuantity.setText(String.valueOf(wCount));
+            wMoney=wPrice*wCount;
+            wMoneyText.setText(String.format("%.2f", wMoney));
+
 
         });
         outerWearMinus.setOnClickListener(v -> {
 
             wCount--;
-            dressQuantity.setText(String.valueOf(wCount));
+            outerWearQuantity.setText(String.valueOf(wCount));
+            wMoney=wPrice*wCount;
+            wMoneyText.setText(String.format("%.2f", wMoney));
+
 
             if (wCount<1){
 
@@ -144,6 +175,10 @@ public class WashingOrderActivity extends AppCompatActivity {
                   int outerwearQuantity=Integer.parseInt(outerWearQuantity.getText().toString());
                   int dress_quantity=Integer.parseInt(dressQuantity.getText().toString());
 
+                  String tMoney = tMoneyText.getText().toString();
+                  String dMoney = dMoneyText.getText().toString();
+                  String wMoney = wMoneyText.getText().toString();
+
 
               String t_shirt=tShirt.getText().toString();
               String d_ress=dress.getText().toString();
@@ -157,7 +192,7 @@ public class WashingOrderActivity extends AppCompatActivity {
                       "&ts="+t_shirt+"&dress="+d_ress+
                       "&outerW="+outer_wear+"&tq="+t_shirtQuantity+
                       "&outerwearQ="+outerwearQuantity+"&dq="+
-                      dress_quantity;
+                      dress_quantity+"&tMoney="+tMoney+"&dMoney="+dMoney+"&wMoney="+wMoney;
 
             StringRequest request = new StringRequest(Request.Method.GET, URL,
                     new Response.Listener<String>() {

@@ -70,9 +70,10 @@
                     android:textSize="18sp"
                     />
                 <TextView
+                    android:id="@+id/tMoneyText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="$3.0"
+                    android:text="$.50"
                     android:textSize="18sp"
                     />
             </LinearLayout>
@@ -131,7 +132,7 @@
             <ImageView
                 android:layout_width="100dp"
                 android:layout_height="match_parent"
-                android:src="@drawable/t_shirt"
+                android:src="@drawable/dress"
                 android:scaleType="centerCrop"
                 />
             <LinearLayout
@@ -149,11 +150,11 @@
                     />
 
                 <TextView
+                    android:id="@+id/dMoneyText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="$3.0"
-                    android:textSize="18sp"
-                    />
+                    android:textSize="18sp" />
             </LinearLayout>
 
 
@@ -215,7 +216,7 @@
                 <ImageView
                     android:layout_width="100dp"
                     android:layout_height="match_parent"
-                    android:src="@drawable/t_shirt"
+                    android:src="@drawable/outerwear"
                     android:scaleType="centerCrop"
                     />
                 <LinearLayout
@@ -233,6 +234,7 @@
                         android:textSize="18sp" />
 
                     <TextView
+                        android:id="@+id/wMoneyText"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="$3.0"
