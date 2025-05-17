@@ -1,5 +1,7 @@
 package com.example.laundryanddryclear;
 
+import static android.text.TextUtils.isEmpty;
+
 import android.app.DatePickerDialog;
 import android.os.Bundle;
 import android.view.View;
@@ -8,6 +10,7 @@ import android.widget.ArrayAdapter;
 import android.widget.DatePicker;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -17,6 +20,15 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+import com.google.android.material.textfield.TextInputEditText;
+
+import java.lang.reflect.Method;
 import java.util.Calendar;
 
 public class OrderActivity extends AppCompatActivity {
@@ -29,6 +41,7 @@ public class OrderActivity extends AppCompatActivity {
     TextView quantityText,moneyText;
     int count;
     int t_shirt_prize,bottom_prize, dress_prize,outer_wear_prize,jeans_prize;
+    TextInputEditText edNumber,edLocation;
 
 
     @Override
@@ -81,8 +94,72 @@ public class OrderActivity extends AppCompatActivity {
     });
 
 
+        //=====================================================
+        confirmButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                String orderDate = orderDateText.getText().toString();
+
+                String number= edNumber.getText().toString().trim();
+
+                String location=edLocation.getText().toString();
+
+                String cloth_name=titleText1.getText().toString();
+
+                String category=itemText.getText().toString();
+
+                String quantity=quantityText.getText().toString();
+
+                String money=moneyText.getText().toString();
 
 
+             if (number.isEmpty()){
+                   edNumber.setError("Enter Number Please");
+               } else if (number.length()<11) {
+                   edNumber.setError("number must be 11 character");
+
+               } else if (location.isEmpty()) {
+                   edLocation.setError("Location Must needed");
+               } else {
+                   String URL="http://192.168.0.101/apps/laundryOrderData.php?category="+category+
+                           "&clothName="
+                           +cloth_name+
+                           "&date="
+                           +orderDate+
+                           "&quantity="
+                           +quantity+"&money="+money+"&number="+number+"&location="+location;
+
+
+
+                   RequestQueue queue = Volley.newRequestQueue(OrderActivity.this);
+
+                   StringRequest stringRequest=new StringRequest(Request.Method.GET, URL, new Response.Listener<String>() {
+                       @Override
+                       public void onResponse(String response) {
+
+                           Toast.makeText(OrderActivity.this, "Order Confirm", Toast.LENGTH_SHORT).show();
+
+                       }
+                   }, new Response.ErrorListener() {
+                       @Override
+                       public void onErrorResponse(VolleyError error) {
+                           Toast.makeText(OrderActivity.this, ""+error.toString(), Toast.LENGTH_SHORT).show();
+
+                       }
+                   });
+
+                   queue.add(stringRequest);
+               }
+
+
+
+
+
+            }
+        });
+
+        //=====================================================
 
     }
 
@@ -98,7 +175,8 @@ public class OrderActivity extends AppCompatActivity {
         quantityText=findViewById(R.id.quantityText);
         moneyText=findViewById(R.id.moneyText);
         confirmButton=findViewById(R.id.confirmButton);
-
+        edNumber=findViewById(R.id.edNumber);
+        edLocation=findViewById(R.id.edLoction);
 
     }
 

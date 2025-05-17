@@ -20,18 +20,6 @@
             android:name=".OrderActivity"
             android:exported="false" />
         <activity
-            android:name=".IroningOrderActivity"
-            android:exported="false" />
-        <activity
-            android:name=".DryingOrderActivity"
-            android:exported="false" />
-        <activity
-            android:name=".WashingOrderActivity"
-            android:exported="false" />
-        <activity
-            android:name=".OrderConfirmActivity"
-            android:exported="false" />
-        <activity
             android:name=".SignupActivity"
             android:exported="false" />
         <activity

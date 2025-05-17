@@ -260,6 +260,7 @@
        >
 
         <com.google.android.material.textfield.TextInputEditText
+           android:id="@+id/edNumber"
             android:layout_width="300dp"
             android:layout_height="match_parent"
             android:textSize="18sp"
@@ -281,6 +282,7 @@
             >
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edLoction"
                 android:layout_width="300dp"
                 android:layout_height="match_parent"
                 android:textSize="18sp"
