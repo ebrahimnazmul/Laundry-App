@@ -8,7 +8,6 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Adapter;
 import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
@@ -105,26 +104,30 @@ public class CategoryFragment extends Fragment {
 
 
 
+
             imageView.setOnClickListener(v -> {
                 if (itemType.contains("washing")){
 
-                   WashingOrderActivity.itemType=itemType;
-                    Intent intent = new Intent(getContext(),WashingOrderActivity.class);
+                    OrderActivity.itemType=itemType;
+                    Intent intent = new Intent(getContext(), OrderActivity.class);
                     startActivity(intent);
 
                 } else if (itemType.contains("drying")) {
-                    DryingOrderActivity.itemType = itemType;
-                    Intent intent = new Intent(getContext(), DryingOrderActivity.class);
+
+                    OrderActivity.itemType=itemType;
+                    Intent intent = new Intent(getContext(), OrderActivity.class);
                     startActivity(intent);
+
                 }else if (itemType.contains("ironing")) {
 
-                    IroningOrderActivity.itemType=itemType;
-                    Intent intent = new Intent(getContext(),IroningOrderActivity.class);
+                    OrderActivity.itemType=itemType;
+                    Intent intent = new Intent(getContext(), OrderActivity.class);
                     startActivity(intent);
                 }
 
-
             });
+
+
 
 
             return view;
